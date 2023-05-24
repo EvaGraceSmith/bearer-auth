@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "bearer-auth",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,9 +12,9 @@
     "test:watch": "NODE_ENV=test jest --watchAll",
     "test": "NODE_ENV=test jest"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Eva Grace Smith",
   "license": "ISC",
+  "keywords": [],
   "dependencies": {
     "base-64": "^1.0.0",
     "bcrypt": "^5.0.0",
