@@ -19,9 +19,9 @@ const PORT = process.env.PORT || 3003;
 
 // // Start up DB Server
 const { db } = require('./src/auth/models/index.js');
-// db.sync()
-//   .then(() => {
+db.sync()
+  .then(() => {
 
-//     // Start the web server
-//     require('./src/server.js').start(process.env.PORT);
-//   });
+    // Start the web server
+    require('./src/server.js').start(process.env.PORT);
+  });
