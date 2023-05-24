@@ -1,8 +1,10 @@
 'use strict';
 
-process.env.SECRET = "TEST_SECRET";
+process.env.SECRET = 'TEST_SECRET';
 
-const { db, } = require('../../../../../src/auth/models');
+
+
+const { db } = require('../../../../../src/auth/models');
 const { handleGetUsers } = require('../../../../../src/auth/router/handlers.js');
 
 beforeAll(async () => {
