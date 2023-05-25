@@ -6,9 +6,9 @@ const cors = require('cors');
 // const morgan = require('morgan');
 
 // Esoteric Resources
-// const errorHandler = require('./error-handlers/500.js');
-// // const notFound = require('./error-handlers/404.js');
-// const authRouter = require('./auth/router/index.js');
+const errorHandler = require('./error-handlers/500.js');
+const notFound = require('./error-handlers/404.js');
+const authRouter = require('./auth/router/index.js');
 
 // Prepare the express app
 const app = express();
@@ -24,8 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(authRouter);
 
 // Catchalls
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 
 
@@ -34,12 +34,12 @@ const start = (port) => app.listen(port, () => console.log('server up on port:',
 // Export an object with the express app and a start method
 module.exports = { app, start };
 
-// module.exports = {
-//   server: app,
-//   start: (port) => {
-//     app.listen(port, () => {
-//       console.log(`Server Up on ${port}`);
-//     });
-//   },
-// };
+module.exports = {
+  server: app,
+  start: (port) => {
+    app.listen(port, () => {
+      console.log(`Server Up on ${port}`);
+    });
+  },
+};
 
